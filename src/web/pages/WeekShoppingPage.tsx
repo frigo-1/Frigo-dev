@@ -106,7 +106,7 @@ export const WeekShoppingPage: React.FC = () => {
   // 6.3 HOÀN TẤT ĐI CHỢ
   if (shoppingMode === 'complete' && completedShopping) {
     return (
-      <div className="min-h-screen bg-takosan-cream flex flex-col justify-between p-6 max-w-md mx-auto animate-fade-in">
+      <div className="min-h-screen bg-takosan-cream flex flex-col justify-between p-6 animate-fade-in">
         <div className="text-center pt-8 space-y-2">
           <h2 className="font-heading font-extrabold text-2xl text-slate-900 tracking-tight">
             Tuyệt vời! 🎉
@@ -182,7 +182,7 @@ export const WeekShoppingPage: React.FC = () => {
 
   // 6.1 (LIST) & 6.2 (ACTIVE SHOPPING MODE)
   return (
-    <div className="min-h-screen bg-takosan-cream pb-32 max-w-md mx-auto">
+    <div className="min-h-screen bg-takosan-cream pb-32">
       <TopBar
         showBack
         title={shoppingMode === 'active' ? 'Đang đi chợ' : 'Danh sách đi chợ'}
@@ -207,7 +207,7 @@ export const WeekShoppingPage: React.FC = () => {
 
             <div className="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden">
               <div
-                className="bg-takosan-green h-full transition-all duration-300 rounded-full"
+                className="bg-takosan-green h-full transition-tap duration-300 rounded-full"
                 style={{ width: `${progressPercent}%` }}
               />
             </div>
@@ -235,7 +235,7 @@ export const WeekShoppingPage: React.FC = () => {
           <button
             onClick={() => setSelectedSection('all')}
             className={clsx(
-              'px-3.5 py-1.5 rounded-full text-xs font-heading font-semibold whitespace-nowrap transition-all tap-target',
+              'px-3.5 py-1.5 rounded-full text-xs font-heading font-semibold whitespace-nowrap transition-tap tap-target',
               selectedSection === 'all'
                 ? 'bg-takosan-green text-white shadow-xs'
                 : 'bg-white text-slate-600 border border-slate-200/80 hover:bg-slate-50'
@@ -249,7 +249,7 @@ export const WeekShoppingPage: React.FC = () => {
               key={sec}
               onClick={() => setSelectedSection(sec)}
               className={clsx(
-                'px-3.5 py-1.5 rounded-full text-xs font-heading font-semibold whitespace-nowrap transition-all tap-target',
+                'px-3.5 py-1.5 rounded-full text-xs font-heading font-semibold whitespace-nowrap transition-tap tap-target',
                 selectedSection === sec
                   ? 'bg-takosan-green text-white shadow-xs'
                   : 'bg-white text-slate-600 border border-slate-200/80 hover:bg-slate-50'
@@ -274,7 +274,7 @@ export const WeekShoppingPage: React.FC = () => {
                 disabled={isSubmitting}
                 onClick={() => toggleShoppingItem(item.ingredientId, !isChecked)}
                 className={clsx(
-                  'w-full text-left p-3.5 rounded-2xl flex items-center justify-between cursor-pointer transition-all border shadow-xs active:scale-99',
+                  'w-full text-left p-3.5 rounded-2xl flex items-center justify-between cursor-pointer transition-tap border shadow-xs active:scale-99',
                   isChecked
                     ? 'bg-slate-50/80 border-slate-200/60 opacity-60'
                     : 'bg-white border-slate-200/80 hover:border-slate-300'
@@ -284,7 +284,7 @@ export const WeekShoppingPage: React.FC = () => {
                   {/* Checkbox */}
                   <div
                     className={clsx(
-                      'w-5 h-5 rounded-lg flex items-center justify-center transition-all border shrink-0',
+                      'w-5 h-5 rounded-lg flex items-center justify-center transition-tap border shrink-0',
                       isChecked
                         ? 'bg-takosan-green border-takosan-green text-white'
                         : 'border-slate-300 bg-white'
@@ -336,7 +336,7 @@ export const WeekShoppingPage: React.FC = () => {
       </div>
 
       {/* Sticky Bottom Actions */}
-      <div className="fixed bottom-0 left-0 right-0 p-4 bg-white/95 backdrop-blur-md border-t border-slate-200/80 max-w-md mx-auto z-40 shadow-lg">
+      <div className="fixed bottom-[calc(68px+env(safe-area-inset-bottom,0px))] md:bottom-0 left-0 right-0 md:left-20 lg:left-64 p-4 bg-white/95 backdrop-blur-md border-t border-slate-200/80 z-40 shadow-lg">
         {shoppingMode === 'list' ? (
           <Button
             fullWidth

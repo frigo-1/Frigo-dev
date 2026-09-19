@@ -47,7 +47,7 @@ export const ShoppingPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-takosan-cream pb-12 max-w-md mx-auto">
+    <div className="min-h-screen bg-takosan-cream pb-12">
       <TopBar showBack title="Danh sách mua sắm" subtitle="Các nguyên liệu cần mua thêm" />
 
       <div className="px-4 pt-3 space-y-4">
@@ -64,14 +64,14 @@ export const ShoppingPage: React.FC = () => {
             value={newItemName}
             onChange={(e) => setNewItemName(e.target.value)}
             placeholder="Thêm món: Hành tím, Tiêu, Nấm..."
-            className="flex-1 h-11 px-3.5 rounded-xl border border-slate-200/80 text-sm font-medium text-slate-900 focus:outline-none focus:border-takosan-green bg-white shadow-xs transition-colors"
+            className="flex-1 min-w-0 h-11 px-3.5 rounded-xl border border-slate-200/80 text-sm font-medium text-slate-900 focus:outline-none focus:border-takosan-green bg-white shadow-xs transition-colors"
           />
 
           <select
             aria-label="Đơn vị"
             value={newItemUnit}
             onChange={(e) => setNewItemUnit(e.target.value)}
-            className="h-11 px-2.5 rounded-xl border border-slate-200/80 text-xs font-semibold text-slate-800 bg-white focus:outline-none focus:border-takosan-green transition-colors"
+            className="h-11 min-w-0 px-2.5 rounded-xl border border-slate-200/80 text-xs font-semibold text-slate-800 bg-white focus:outline-none focus:border-takosan-green transition-colors"
           >
             <option value="piece">quả/bìa</option>
             <option value="g">gam (g)</option>
@@ -106,7 +106,7 @@ export const ShoppingPage: React.FC = () => {
                 key={item.id}
                 onClick={() => !toggleItem.isPending && toggleItem.mutate({ id: item.id, current: item.isChecked })}
                 className={clsx(
-                  'p-3 rounded-xl flex items-center justify-between cursor-pointer transition-all border border-slate-200/80 shadow-xs active:scale-[0.99]',
+                  'p-3 rounded-xl flex items-center justify-between cursor-pointer transition-tap border border-slate-200/80 shadow-xs active:scale-[0.99]',
                   item.isChecked ? 'bg-slate-50/70 opacity-60' : 'bg-white hover:border-slate-300'
                 )}
               >

@@ -113,7 +113,7 @@ const LotDetail: React.FC<{ routeId: string }> = ({ routeId }) => {
 
   if (lotQuery.isPending && !legacyItem) {
     return (
-      <div className="min-h-screen bg-takosan-cream max-w-md mx-auto">
+      <div className="min-h-screen bg-takosan-cream">
         <TopBar showBack title="Chi tiết nguyên liệu" />
         <div className="p-6"><InlineLoading label="Đang tải nguyên liệu…" /></div>
       </div>
@@ -122,7 +122,7 @@ const LotDetail: React.FC<{ routeId: string }> = ({ routeId }) => {
 
   if (!item) {
     return (
-      <div className="min-h-screen bg-takosan-cream max-w-md mx-auto">
+      <div className="min-h-screen bg-takosan-cream">
         <TopBar showBack title="Chi tiết nguyên liệu" />
         <div className="p-6 text-center">
           {legacyQuery.isError ? (
@@ -191,7 +191,7 @@ const LotDetail: React.FC<{ routeId: string }> = ({ routeId }) => {
   };
 
   return (
-    <div className="min-h-screen bg-takosan-cream pb-12 max-w-md mx-auto">
+    <div className="min-h-screen bg-takosan-cream pb-12">
       <TopBar showBack title={item.name} subtitle="Thông tin nguyên liệu" />
 
       <div className="px-4 pt-4 space-y-4">
@@ -384,7 +384,7 @@ const LotDetail: React.FC<{ routeId: string }> = ({ routeId }) => {
               <div
                 key={recipe.id}
                 onClick={() => navigate(`/recipes/${recipe.slug}`)}
-                className="bg-white rounded-xl p-3 flex items-center gap-3.5 border border-slate-200/80 shadow-xs cursor-pointer hover:border-takosan-green/40 active:scale-[0.99] transition-all"
+                className="bg-white rounded-xl p-3 flex items-center gap-3.5 border border-slate-200/80 shadow-xs cursor-pointer hover:border-takosan-green/40 active:scale-[0.99] transition-tap"
               >
                 <img src={resolveRecipeImage(recipe).src} alt={recipe.title} className="w-14 h-14 rounded-lg object-cover shrink-0 border border-slate-100" loading="lazy" onError={recipeImageErrorHandler(resolveRecipeImage(recipe).fallbackSrc)} />
                 <div className="flex-1 min-w-0">

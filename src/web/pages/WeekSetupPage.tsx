@@ -104,18 +104,18 @@ export const WeekSetupPage: React.FC = () => {
         subtitle={`Bước ${currentStep} / 5`}
       />
 
-      <div className="px-4 pt-4 max-w-md mx-auto space-y-5">
+      <div className="px-4 pt-4 space-y-5">
         {/* Step Progress Bar */}
         <div className="w-full bg-slate-200/80 h-1.5 rounded-full overflow-hidden">
           <div
-            className="bg-takosan-green h-full transition-all duration-300 rounded-full"
+            className="bg-takosan-green h-full transition-tap duration-300 rounded-full"
             style={{ width: `${(currentStep / 5) * 100}%` }}
           />
         </div>
 
         {/* STEP 1: Meal Slots */}
         {currentStep === 1 && (
-          <div className="space-y-4 animate-in fade-in duration-200">
+          <div className="space-y-4 animate-fade-in">
             <div>
               <span className="text-[11px] font-semibold uppercase px-2.5 py-0.5 rounded-md bg-takosan-mint text-takosan-green-deep border border-takosan-mint-deep/60">
                 Bước 1 / 5
@@ -153,7 +153,7 @@ export const WeekSetupPage: React.FC = () => {
                   key={opt.id}
                   onClick={() => setMealPreset(opt.id as any)}
                   className={clsx(
-                    'p-4 rounded-xl border cursor-pointer transition-all active:scale-[0.99] flex items-center justify-between',
+                    'p-4 rounded-xl border cursor-pointer transition-tap active:scale-[0.99] flex items-center justify-between',
                     mealPreset === opt.id
                       ? 'bg-white border-takosan-green shadow-xs ring-1 ring-takosan-green'
                       : 'bg-white border-slate-200/80 hover:border-slate-300'
@@ -189,7 +189,7 @@ export const WeekSetupPage: React.FC = () => {
 
         {/* STEP 2: Budget */}
         {currentStep === 2 && (
-          <div className="space-y-4 animate-in fade-in duration-200">
+          <div className="space-y-4 animate-fade-in">
             <div>
               <span className="text-[11px] font-semibold uppercase px-2.5 py-0.5 rounded-md bg-takosan-mint text-takosan-green-deep border border-takosan-mint-deep/60">
                 Bước 2 / 5
@@ -218,7 +218,7 @@ export const WeekSetupPage: React.FC = () => {
                     setIsUnlimitedBudget(false);
                   }}
                   className={clsx(
-                    'p-3.5 rounded-xl border text-sm font-heading font-semibold transition-all tap-target active:scale-[0.98]',
+                    'p-3.5 rounded-xl border text-sm font-heading font-semibold transition-tap tap-target active:scale-[0.98]',
                     !isUnlimitedBudget && budgetVnd === p.value
                       ? 'bg-takosan-green text-white shadow-xs border-takosan-green'
                       : 'bg-white text-slate-800 border-slate-200/80 hover:border-slate-300'
@@ -237,7 +237,7 @@ export const WeekSetupPage: React.FC = () => {
                 else setBudgetVnd(750000);
               }}
               className={clsx(
-                'p-4 rounded-xl border cursor-pointer transition-all flex items-center justify-between',
+                'p-4 rounded-xl border cursor-pointer transition-tap flex items-center justify-between',
                 isUnlimitedBudget
                   ? 'bg-white border-takosan-green ring-1 ring-takosan-green shadow-xs'
                   : 'bg-white border-slate-200/80 hover:border-slate-300'
@@ -268,7 +268,7 @@ export const WeekSetupPage: React.FC = () => {
 
         {/* STEP 3: Cooking Schedule */}
         {currentStep === 3 && (
-          <div className="space-y-4 animate-in fade-in duration-200">
+          <div className="space-y-4 animate-fade-in">
             <div className="flex items-center justify-between">
               <div>
                 <span className="text-[11px] font-semibold uppercase px-2.5 py-0.5 rounded-md bg-takosan-mint text-takosan-green-deep border border-takosan-mint-deep/60">
@@ -314,7 +314,7 @@ export const WeekSetupPage: React.FC = () => {
                             setDaySchedules(updated);
                           }}
                           className={clsx(
-                            'px-2.5 py-1 rounded-lg text-xs font-semibold transition-all tap-target',
+                            'px-2.5 py-1 rounded-lg text-xs font-semibold transition-tap tap-target',
                             daySchedules[idx] === t.id
                               ? 'bg-takosan-green text-white shadow-xs'
                               : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
@@ -339,7 +339,7 @@ export const WeekSetupPage: React.FC = () => {
 
         {/* STEP 4: Weekly Priorities */}
         {currentStep === 4 && (
-          <div className="space-y-4 animate-in fade-in duration-200">
+          <div className="space-y-4 animate-fade-in">
             <div>
               <span className="text-[11px] font-semibold uppercase px-2.5 py-0.5 rounded-md bg-takosan-mint text-takosan-green-deep border border-takosan-mint-deep/60">
                 Bước 4 / 5
@@ -360,7 +360,7 @@ export const WeekSetupPage: React.FC = () => {
                     key={opt.id}
                     onClick={() => togglePriority(opt.id)}
                     className={clsx(
-                      'p-3.5 rounded-xl border cursor-pointer transition-all flex flex-col justify-between h-24 select-none active:scale-[0.98]',
+                      'p-3.5 rounded-xl border cursor-pointer transition-tap flex flex-col justify-between h-24 select-none active:scale-[0.98]',
                       isSelected
                         ? 'bg-white border-takosan-green shadow-xs ring-1 ring-takosan-green'
                         : 'bg-white border-slate-200/80 hover:border-slate-300'
@@ -391,7 +391,7 @@ export const WeekSetupPage: React.FC = () => {
 
         {/* STEP 5: Shopping Frequency */}
         {currentStep === 5 && (
-          <div className="space-y-4 animate-in fade-in duration-200">
+          <div className="space-y-4 animate-fade-in">
             <div>
               <span className="text-[11px] font-semibold uppercase px-2.5 py-0.5 rounded-md bg-takosan-mint text-takosan-green-deep border border-takosan-mint-deep/60">
                 Bước 5 / 5
@@ -431,7 +431,7 @@ export const WeekSetupPage: React.FC = () => {
                   key={opt.id}
                   onClick={() => setFrequency(opt.id as ShoppingFrequency)}
                   className={clsx(
-                    'p-4 rounded-xl border cursor-pointer transition-all active:scale-[0.99] flex items-center justify-between',
+                    'p-4 rounded-xl border cursor-pointer transition-tap active:scale-[0.99] flex items-center justify-between',
                     frequency === opt.id
                       ? 'bg-white border-takosan-green shadow-xs ring-1 ring-takosan-green'
                       : 'bg-white border-slate-200/80 hover:border-slate-300'
@@ -462,7 +462,7 @@ export const WeekSetupPage: React.FC = () => {
       </div>
 
       {/* Fixed Next / Complete CTA */}
-      <div className="fixed bottom-0 left-0 right-0 p-4 pb-[calc(1rem+env(safe-area-inset-bottom,0px))] bg-white/95 backdrop-blur-md border-t border-slate-200/80 max-w-md mx-auto z-40 shadow-lg">
+      <div className="fixed bottom-[calc(68px+env(safe-area-inset-bottom,0px))] md:bottom-0 left-0 right-0 md:left-20 lg:left-64 p-4 md:pb-[calc(1rem+env(safe-area-inset-bottom,0px))] bg-white/95 backdrop-blur-md border-t border-slate-200/80 z-40 shadow-lg">
         <Button
           fullWidth
           size="lg"

@@ -391,7 +391,7 @@ const ScanReview: React.FC<{ effectiveScanId: string }> = ({ effectiveScanId }) 
       </div>
 
       {/* Fixed Confirm CTA Bar */}
-      <div className="fixed bottom-0 left-0 right-0 p-4 pb-[calc(1rem+env(safe-area-inset-bottom,0px))] bg-white/95 backdrop-blur-md border-t border-slate-200/80 max-w-md mx-auto z-40 shadow-lg">
+      <div className="fixed bottom-[calc(68px+env(safe-area-inset-bottom,0px))] md:bottom-0 left-0 right-0 md:left-20 lg:left-64 p-4 pb-[calc(1rem+env(safe-area-inset-bottom,0px))] bg-white/95 backdrop-blur-md border-t border-slate-200/80 z-40 shadow-lg">
         {isConfirmed ? <Button fullWidth size="lg" onClick={() => navigate('/fridge')}>
           Xem tủ lạnh
         </Button> : <Button
@@ -410,8 +410,8 @@ const ScanReview: React.FC<{ effectiveScanId: string }> = ({ effectiveScanId }) 
 
       {/* Manual Add Sheet */}
       {isManualAddOpen && canEdit && (
-        <div className="fixed inset-0 z-50 bg-slate-950/40 backdrop-blur-sm flex items-end justify-center p-0 animate-in fade-in duration-200">
-          <div className="bg-white rounded-t-2xl w-full max-w-md p-5 shadow-2xl border-t border-slate-200/80 animate-in slide-in-from-bottom-5 duration-200">
+        <div className="fixed inset-0 z-50 bg-slate-950/40 backdrop-blur-sm flex items-end justify-center p-0 animate-fade-in">
+          <div className="bg-white rounded-t-2xl w-full max-w-md p-5 shadow-2xl border-t border-slate-200/80 animate-slide-up">
             {/* Grab bar */}
             <div className="w-10 h-1 bg-slate-200 rounded-full mx-auto mb-4 shrink-0" />
 

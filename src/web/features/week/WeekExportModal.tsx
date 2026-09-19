@@ -110,8 +110,8 @@ export const WeekExportModal: React.FC<WeekExportModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/50 backdrop-blur-sm animate-in fade-in duration-200 text-slate-900">
-      <div className="bg-white w-full max-w-sm rounded-2xl overflow-hidden shadow-2xl border border-slate-200/80 flex flex-col max-h-[90vh] animate-in zoom-in-95 duration-200">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/50 backdrop-blur-sm animate-fade-in text-slate-900">
+      <div className="bg-white w-full max-w-sm rounded-2xl overflow-hidden shadow-2xl border border-slate-200/80 flex flex-col max-h-[90vh] animate-fade-in">
         {/* Header */}
         <div className="p-4 bg-takosan-green text-white flex items-center justify-between">
           <div className="flex items-center gap-2">
@@ -167,7 +167,7 @@ export const WeekExportModal: React.FC<WeekExportModalProps> = ({
           <div className="space-y-2">
             <button
               onClick={handleCopyShopping}
-              className="w-full p-3 rounded-xl bg-white border border-slate-200/80 hover:border-takosan-green/50 flex items-center justify-between transition-all tap-target text-left shadow-xs active:scale-[0.99]"
+              className="w-full p-3 rounded-xl bg-white border border-slate-200/80 hover:border-takosan-green/50 flex items-center justify-between transition-tap tap-target text-left shadow-xs active:scale-[0.99]"
             >
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 rounded-lg bg-takosan-mint border border-takosan-mint-deep flex items-center justify-center text-takosan-green-deep">
@@ -189,7 +189,7 @@ export const WeekExportModal: React.FC<WeekExportModalProps> = ({
 
             <button
               onClick={handleCopyMenu}
-              className="w-full p-3 rounded-xl bg-white border border-slate-200/80 hover:border-takosan-green/50 flex items-center justify-between transition-all tap-target text-left shadow-xs active:scale-[0.99]"
+              className="w-full p-3 rounded-xl bg-white border border-slate-200/80 hover:border-takosan-green/50 flex items-center justify-between transition-tap tap-target text-left shadow-xs active:scale-[0.99]"
             >
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 rounded-lg bg-takosan-mint border border-takosan-mint-deep flex items-center justify-center text-takosan-green-deep">

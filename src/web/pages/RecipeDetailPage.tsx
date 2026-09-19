@@ -60,7 +60,7 @@ export const RecipeDetailPage: React.FC = () => {
 
   if (recipeKey && recipeQuery.isPending) {
     return (
-      <div className="min-h-screen bg-takosan-cream max-w-md mx-auto">
+      <div className="min-h-screen bg-takosan-cream">
         <TopBar showBack title="Chi tiết món ăn" />
         <div className="p-4 space-y-4" role="status" aria-live="polite">
           <SkeletonCard className="h-56 rounded-2xl" />
@@ -75,7 +75,7 @@ export const RecipeDetailPage: React.FC = () => {
 
   if (recipeQuery.isError && !notFound) {
     return (
-      <div className="min-h-screen bg-takosan-cream max-w-md mx-auto">
+      <div className="min-h-screen bg-takosan-cream">
         <TopBar showBack title="Chi tiết món ăn" />
         <div className="p-4">
           <InlineError error={recipeQuery.error} onRetry={() => recipeQuery.refetch()} />
@@ -86,7 +86,7 @@ export const RecipeDetailPage: React.FC = () => {
 
   if (notFound || !recipe) {
     return (
-      <div className="min-h-screen bg-takosan-cream max-w-md mx-auto">
+      <div className="min-h-screen bg-takosan-cream">
         <TopBar showBack title="Chi tiết món ăn" />
         <div className="p-8 text-center space-y-3">
           <SearchX className="w-10 h-10 text-slate-300 mx-auto" aria-hidden="true" />
@@ -110,7 +110,7 @@ export const RecipeDetailPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-takosan-cream pb-32 max-w-md mx-auto">
+    <div className="min-h-screen bg-takosan-cream pb-32">
       <TopBar showBack title={recipe.title} />
       {inventoryQuery.isError && <InlineError error={inventoryQuery.error} onRetry={() => inventoryQuery.refetch()} />}
 
@@ -165,7 +165,7 @@ export const RecipeDetailPage: React.FC = () => {
               aria-selected={activeTab === tab.id}
               onClick={() => setActiveTab(tab.id)}
               className={clsx(
-                'flex-1 py-2 rounded-lg text-xs font-heading font-bold transition-all tap-target',
+                'flex-1 py-2 rounded-lg text-xs font-heading font-bold transition-tap tap-target',
                 activeTab === tab.id
                   ? 'bg-white text-takosan-green shadow-xs'
                   : 'text-slate-600 hover:text-slate-900'
@@ -232,7 +232,7 @@ export const RecipeDetailPage: React.FC = () => {
                   <div
                     key={ing.ingredientId}
                     className={clsx(
-                      'p-2.5 rounded-xl border flex items-center justify-between transition-all',
+                      'p-2.5 rounded-xl border flex items-center justify-between transition-tap',
                       hasIngredient
                         ? 'bg-takosan-mint/50 border-takosan-mint-deep/80'
                         : 'bg-white border-slate-100'
@@ -273,7 +273,7 @@ export const RecipeDetailPage: React.FC = () => {
                         onClick={() => addToShopping.mutate(ing)}
                         disabled={isAdded || addToShopping.isPending}
                         className={clsx(
-                          'px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1 transition-all tap-target',
+                          'px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1 transition-tap tap-target',
                           isAdded
                             ? 'bg-slate-100 text-slate-400 border border-slate-200'
                             : 'bg-takosan-mint text-takosan-green-deep border border-takosan-mint-deep/80 hover:bg-takosan-mint-hover active:scale-95 shadow-xs'
@@ -328,7 +328,7 @@ export const RecipeDetailPage: React.FC = () => {
       </div>
 
       {/* Sticky Bottom Start Cooking Button */}
-      <div className="fixed bottom-0 left-0 right-0 p-3.5 pb-[calc(0.875rem+env(safe-area-inset-bottom,0px))] bg-white/95 backdrop-blur-md border-t border-slate-200/80 max-w-md mx-auto z-40 shadow-lg">
+      <div className="fixed bottom-[calc(68px+env(safe-area-inset-bottom,0px))] md:bottom-0 left-0 right-0 md:left-20 lg:left-64 p-3.5 pb-[calc(0.875rem+env(safe-area-inset-bottom,0px))] bg-white/95 backdrop-blur-md border-t border-slate-200/80 z-40 shadow-lg">
         <Button
           fullWidth
           size="lg"

@@ -261,12 +261,12 @@ const ReceiptReview: React.FC<{ receiptScanId: string | null }> = ({ receiptScan
   };
 
   return (
-    <div className="min-h-screen bg-takosan-cream pb-[calc(12rem+env(safe-area-inset-bottom))] max-w-md mx-auto">
+    <div className="min-h-screen bg-takosan-cream pb-[calc(12rem+env(safe-area-inset-bottom))]">
       <TopBar showBack title="Chi tiết Hóa đơn" subtitle="Bóc tách tự động bởi AI Vision" />
 
       {/* Success Toast */}
       {successToast && (
-        <div className="fixed top-16 left-4 right-4 z-50 bg-slate-900 text-white px-4 py-3 rounded-xl shadow-lg flex items-center gap-3 animate-in fade-in slide-in-from-top-4 duration-200 max-w-md mx-auto border border-white/10">
+        <div className="fixed top-16 left-4 right-4 z-50 bg-slate-900 text-white px-4 py-3 rounded-xl shadow-lg flex items-center gap-3 animate-fade-in max-w-md mx-auto border border-white/10">
           <CheckCircle2 className="w-5 h-5 text-takosan-mint shrink-0" />
           <p className="text-xs font-semibold leading-tight">{successToast}</p>
         </div>
@@ -505,7 +505,7 @@ const ReceiptReview: React.FC<{ receiptScanId: string | null }> = ({ receiptScan
       </div>
 
       {/* Floating Action Bottom */}
-      <div className="fixed bottom-0 left-0 right-0 p-4 pb-[calc(1rem+env(safe-area-inset-bottom))] bg-white/95 backdrop-blur-md border-t border-slate-200/80 z-40 max-w-md mx-auto space-y-2 shadow-lg">
+      <div className="fixed bottom-[calc(68px+env(safe-area-inset-bottom,0px))] md:bottom-0 left-0 right-0 md:left-20 lg:left-64 p-4 md:pb-[calc(1rem+env(safe-area-inset-bottom))] bg-white/95 backdrop-blur-md border-t border-slate-200/80 z-40 space-y-2 shadow-lg">
         {submitError && <p role="alert" className="text-xs text-rose-800">{submitError}</p>}
         {isConfirmed ? <Button fullWidth onClick={() => navigate('/fridge')}>Xem tủ lạnh</Button> : <>
         <Button
